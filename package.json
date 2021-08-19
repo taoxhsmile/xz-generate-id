@@ -11,14 +11,14 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:xz-generate-id.helloWorld"
+    "onCommand:xz-generate-id.generate"
   ],
   "main": "./out/extension.js",
   "icon": "images/icon.png",
   "contributes": {
     "keybindings": [
       {
-        "command": "xz-generate-id.helloWorld",
+        "command": "xz-generate-id.generate",
         "key": "ctrl+1",
         "mac": "cmd+1",
         "when": "editorTextFocus"
@@ -26,8 +26,8 @@
     ],
     "commands": [
       {
-        "command": "xz-generate-id.helloWorld",
-        "title": "Hello World111"
+        "command": "xz-generate-id.generate",
+        "title": "生成识别码"
       }
     ]
   },
