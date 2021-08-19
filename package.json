@@ -29,7 +29,16 @@
         "command": "xz-generate-id.generate",
         "title": "生成识别码"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "xz-generate-id.generate",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "repository": {
     "type": "git",
