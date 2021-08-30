@@ -70,8 +70,18 @@ export function activate(context: vscode.ExtensionContext) {
               // scope.getBinding(name).referenced 绑定是否被引用
               // scope.getBinding(name).constantViolations 获取当前所有绑定修改
               // scope.getBinding(name).referencePaths  获取当前所有绑定路径
-              const binding = path.scope.getBinding((id as any).name);
-              return !!binding?.referenced;
+              if (t.isObjectPattern(id)) {
+                id.properties = id.properties.filter((property) => {
+                  const binding = path.scope.getBinding(
+                    (property as any).key.name
+                  );
+                  return !!binding?.referenced;
+                });
+                return id.properties.length > 0;
+              } else {
+                const binding = path.scope.getBinding((id as any).name);
+                return !!binding?.referenced;
+              }
             });
 
             if (node.declarations.length === 0) {

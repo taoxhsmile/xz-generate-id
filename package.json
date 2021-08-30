@@ -61,6 +61,7 @@
     "url": "https://github.com/taoxhsmile/xz-generate-id"
   },
   "scripts": {
+    "vscode:publish": "yarn run vscode:prepublish && vsce publish",
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
