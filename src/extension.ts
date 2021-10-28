@@ -6,9 +6,6 @@ import * as parser from "@babel/parser";
 import traverse from "@babel/traverse";
 import generate from "@babel/generator";
 import { isValidDocumentLanguage } from "./utils";
-import { extensionLanguages } from "./constants";
-
-console.log("extensionLanguages=", extensionLanguages);
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
